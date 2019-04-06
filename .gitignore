@@ -1,0 +1,10 @@
+dist/
+bin/
+release/
+debug/
+.vs/
+packages/
+libs/nuget/
+solidworks/
+**/uploads/*
+!**/uploads/.gitkeep
