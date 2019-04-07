@@ -3,6 +3,7 @@ bin/
 release/
 debug/
 .vs/
+tests/testdata/
 packages/
 libs/nuget/
 solidworks/

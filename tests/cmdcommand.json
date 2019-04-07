@@ -1,0 +1,28 @@
+{
+    "settings" : {
+
+    },
+
+    "environment" : {
+        "workingDirectory" : "c:\\work",
+        "binDirectory" : "c:\\bin"
+    },
+
+    "commands" : [
+        {"class" :"Copy", "function": "CopyFile", 
+            "parameters" : { "source": "$(workingDirectory)", "desination": "$(binDirectory)" } 
+        },
+        
+        {"class" :"Copy", "function": "CopyFolder", 
+            "parameters" : {"source": "$(workingDirectory)", "desination": "$(binDirectory)" }
+        },
+        
+        {"class" :"Zip", "function": "ExtractFile", 
+            "parameters" : {"zipPath": "file.zip", "source": "$(workingDirectory)", "desination": "$(binDirectory)" } 
+        },
+        
+        {"class" :"Zip", "function": "ZipFile", 
+            "parameters" : { "source": "$(workingDirectory)", "desination": "$(binDirectory)\\file.zip" }
+        }
+    ]
+}
