@@ -9,19 +9,28 @@ namespace CmdCommit.Commands
 {
     public class DeleteCommand
     {
+
+        /// <summary>
+        /// Deletes a file.
+        /// </summary>
+        /// <param name="source"></param>
         public void DeleteFile(string source)
         {
             File.Delete(source);
         }
 
+        /// <summary>
+        /// Deletes a folder including all sub folders.
+        /// </summary>
+        /// <param name="source"></param>
         public void DeleteFolder(string source)
         {
             if (!Directory.Exists(source))
                 return;
 
-            foreach (var dir in Directory.EnumerateDirectories(source))
+            foreach (var directory in Directory.EnumerateDirectories(source))
             {
-                DeleteFolder(dir);
+                DeleteFolder(directory);
             }
             Directory.Delete(source, true);
         }

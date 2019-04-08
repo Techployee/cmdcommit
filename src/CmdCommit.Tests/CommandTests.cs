@@ -123,5 +123,41 @@ namespace CmdCommit.Tests
             command.Invoke();
         }
 
+
+        [Test]
+        public void InvokeZipFileCommand()
+        {
+            Command command = new Command()
+            {
+                Class = "Zip",
+                Function = "CompressFile",
+                Parameters = new Dictionary<string, object>
+                {
+                    { "zip", Path.Combine(TestDatafolder, "folder2.zip") },
+                    { "source",  Path.Combine(TestDatafolder, "folder3\\folder3file.txt") },
+                    { "destination",  "test\\12\\fff\\11\\folder3121file.txt" }
+                }
+            };
+            command.Invoke();
+        }
+
+        [Test]
+        public void InvokeZipFolderCommand()
+        {
+            Command command = new Command()
+            {
+                Class = "Zip",
+                Function = "CompressFolder",
+                Parameters = new Dictionary<string, object>
+                {
+                    { "zip", Path.Combine(TestDatafolder, "folder3.zip") },
+                    { "source",  Path.Combine(TestDatafolder, "folder3") },
+                    { "destination",  "test\\folder4" },
+                    { "searchPattern",  "*.zip" }
+                }
+            };
+            command.Invoke();
+        }
+
     }
 }

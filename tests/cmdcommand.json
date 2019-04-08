@@ -1,8 +1,4 @@
 {
-    "settings" : {
-
-    },
-
     "environment" : {
         "workingDirectory" : "c:\\work",
         "binDirectory" : "c:\\bin"
